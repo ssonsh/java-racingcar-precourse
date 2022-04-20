@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.domain.engine.MoveStatus;
+
 public class Distance {
     private Integer value;
 
@@ -13,5 +15,11 @@ public class Distance {
 
     public Integer getValue() {
         return this.value;
+    }
+
+    public void update(MoveStatus moveStatus) {
+        if(MoveStatus.FORWARD == moveStatus){
+            value++;
+        }
     }
 }
