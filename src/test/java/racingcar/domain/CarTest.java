@@ -7,6 +7,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import racingcar.domain.engine.Engine;
+import racingcar.generator.TestNumberGenerator;
 
 class CarTest {
 
@@ -51,7 +53,6 @@ class CarTest {
                 .withMessageContaining("[ERROR]");
     }
 
-
     @ParameterizedTest
     @DisplayName("Car 도메인을 생성하면 초기 거리 값이 0이다.")
     @ValueSource(strings = {"자동차_1", "자동차_2"})
@@ -64,4 +65,33 @@ class CarTest {
         Assertions.assertEquals(0, car.getDistance());
     }
 
+    @ParameterizedTest
+    @DisplayName("Engine을 가지는 Car 도메인을 생성하여 전진을 테스트 한다.")
+    @ValueSource(ints = {4, 5, 6, 7, 8, 9})
+    void generateWithEngine01(Integer randomValue){
+        // given
+        Engine engine = Engine.createBy(new TestNumberGenerator(randomValue));
+        Car car = Car.of(Name.from("자동차_1"), engine);
+
+        // when
+        car.run();
+
+        // then
+        Assertions.assertEquals(1, car.getDistance());
+    }
+
+    @ParameterizedTest
+    @DisplayName("Engine을 가지는 Car 도메인을 생성하여 멈춤 테스트 한다.")
+    @ValueSource(ints = {0, 1, 2, 3})
+    void generateWithEngine02(Integer randomValue){
+        // given
+        Engine engine = Engine.createBy(new TestNumberGenerator(randomValue));
+        Car car = Car.of(Name.from("자동차_1"), engine);
+
+        // when
+        car.run();
+
+        // then
+        Assertions.assertEquals(0, car.getDistance());
+    }
 }
