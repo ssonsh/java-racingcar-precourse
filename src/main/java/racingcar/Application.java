@@ -1,7 +1,13 @@
 package racingcar;
 
+import racingcar.controller.RacingGameController;
+import racingcar.generator.RacingGameNumberGenerator;
+import racingcar.view.PlayerInput;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        RacingGameController racingGameController = new RacingGameController(new PlayerInput(),
+                new RacingGameNumberGenerator());
+        racingGameController.execute();
     }
 }

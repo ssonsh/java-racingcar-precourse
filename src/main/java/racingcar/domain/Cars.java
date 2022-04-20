@@ -1,6 +1,8 @@
 package racingcar.domain;
 
+import java.util.ArrayList;
 import java.util.List;
+import racingcar.domain.engine.Engine;
 
 public class Cars {
     private List<Car> values;
@@ -11,6 +13,14 @@ public class Cars {
 
     public static Cars from(List<Car> values) {
         return new Cars(values);
+    }
+
+    public static Cars of(List<Name> names, Engine engine) {
+        List<Car> results = new ArrayList<>();
+        for (Name name : names) {
+            results.add(Car.of(name, engine));
+        }
+        return new Cars(results);
     }
 
     public int size() {

@@ -10,4 +10,8 @@ public class RacingGameStep {
     public static RacingGameStep from(int value) {
         return new RacingGameStep(value);
     }
+
+    public int getValue() {
+        return this.value;
+    }
 }
