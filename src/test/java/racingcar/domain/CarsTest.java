@@ -42,6 +42,7 @@ public class CarsTest {
         // given
         // when
         Cars cars = Cars.from(testCars);
+        cars.add(Car.from(Name.from("신차_1")));
         cars.add(Car.from(Name.from("신차_2")));
 
         // then
