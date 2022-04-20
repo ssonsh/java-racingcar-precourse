@@ -18,7 +18,7 @@ public class Distance {
     }
 
     public void update(MoveStatus moveStatus) {
-        if(MoveStatus.FORWARD == moveStatus){
+        if (MoveStatus.FORWARD == moveStatus) {
             value++;
         }
     }

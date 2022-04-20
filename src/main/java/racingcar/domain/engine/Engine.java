@@ -14,8 +14,8 @@ public class Engine {
         return new Engine(numberGenerator);
     }
 
-    public MoveStatus run(){
-        if(numberGenerator.generate() >= Conditions.MOVE_FORWARD_CONDITION){
+    public MoveStatus run() {
+        if (numberGenerator.generate() >= Conditions.MOVE_FORWARD_CONDITION) {
             return MoveStatus.FORWARD;
         }
 

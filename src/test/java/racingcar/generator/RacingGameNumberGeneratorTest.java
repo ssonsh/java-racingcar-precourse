@@ -9,7 +9,7 @@ class RacingGameNumberGeneratorTest {
 
     @Test
     @DisplayName("0~9 사이의 랜덤값을 생성한다.")
-    void generate01(){
+    void generate01() {
         // given
         // when
         NumberGenerator numberGenerator = new RacingGameNumberGenerator();

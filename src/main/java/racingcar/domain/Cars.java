@@ -14,7 +14,7 @@ public class Cars {
     }
 
     public int size() {
-        if(isEmpty()){
+        if (isEmpty()) {
             return 0;
         }
         return this.values.size();
@@ -28,7 +28,7 @@ public class Cars {
         this.values.add(car);
     }
 
-    public void run(){
+    public void run() {
         for (Car car : this.values) {
             car.run();
         }

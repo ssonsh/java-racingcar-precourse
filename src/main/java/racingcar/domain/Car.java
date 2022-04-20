@@ -22,6 +22,7 @@ public class Car {
     public static Car from(Name name) {
         return new Car(name);
     }
+
     public static Car of(Name name, Engine engine) {
         return new Car(name, engine);
     }
@@ -34,7 +35,7 @@ public class Car {
         return this.distance.getValue();
     }
 
-    public void run(){
+    public void run() {
         MoveStatus moveStatus = this.engine.run();
         this.distance.update(moveStatus);
     }
