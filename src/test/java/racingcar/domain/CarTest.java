@@ -7,7 +7,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import racingcar.constant.ExceptionMessage;
 
 class CarTest {
 
@@ -50,6 +49,19 @@ class CarTest {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> Car.from(Name.from(value)))
                 .withMessageContaining("[ERROR]");
+    }
+
+
+    @ParameterizedTest
+    @DisplayName("Car 도메인을 생성하면 초기 거리 값이 0이다.")
+    @ValueSource(strings = {"자동차_1", "자동차_2"})
+    void generateWithDistance01(String value){
+        // given
+        // when
+        Car car = Car.from(Name.from(value));
+
+        // then
+        Assertions.assertEquals(0, car.getDistance());
     }
 
 }
