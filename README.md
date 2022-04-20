@@ -60,11 +60,12 @@
   - run() 메소드는 1급 콜랙션에서 관리하고 있는 여러 Car 객체의 run()을 호출한다.
 
 ### 8. 사용자 입력값 처리 : 자동차 등록
-
 - 자동차를 등록하는 입력값 처리
     - ex. “pobi,woni,jun”
-- 잘못된 값을 입력하면 IllegalArgumentException이 발생된다.
+- 입력된 값이 없는 경우 잘못된 값을 입력하면 IllegalArgumentException이 발생된다.
     - Exception 메세지에는 [ERROR] 가 포함된다.
+- 입력된 값을 자동차 이름 값 객체인 Name 으로 변환하는 과정에서 이름의 제약조건을 위배하면 IllegalArgumentException이 발생된다.
+    - 이름의 제약조건은 5자를 넘을 수 없다.
 
 ### 9. 사용자 입력값 처리 : 시도횟수 등록
 
