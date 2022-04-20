@@ -16,6 +16,10 @@
 - 재약조건
     - 이름은 5자를 넘을 수 없다.
         - 넘어가게 되는경우 IllegalArgumentException 을 발생시킨다.
+        - Exception Message에는 "[ERROR]" 라는 메세지가 포함된다.
+    - 이름이 공란일 수 없다.
+        - 공란인 경우 IllegalArgumentException 을 발생시킨다.
+        - Exception Message에는 "[ERROR]" 라는 메세지가 포함된다.
 
 ### 2. 여러대의 자동차를 관리하는 1급 콜랙션 도메인을 생성한다.
 
