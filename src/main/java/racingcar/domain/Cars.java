@@ -27,4 +27,14 @@ public class Cars {
     public void add(Car car) {
         this.values.add(car);
     }
+
+    public void run(){
+        for (Car car : this.values) {
+            car.run();
+        }
+    }
+
+    public Car getIdx(int index) {
+        return this.values.get(index);
+    }
 }
