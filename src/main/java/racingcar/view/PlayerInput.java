@@ -20,7 +20,7 @@ public class PlayerInput {
         try {
             validateInputNames(inputNames);
             return nameConvertBy(inputNames);
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return inputNames();
         }
@@ -34,7 +34,7 @@ public class PlayerInput {
             validateInputRacingGameStep(racingGameStep);
             return racingGameStepConvertBy(racingGameStep);
 
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return inputRacingGameStep();
         }
@@ -45,11 +45,11 @@ public class PlayerInput {
     }
 
     private void validateInputRacingGameStep(String racingGameStep) {
-        if(isEmpty(racingGameStep)){
+        if (isEmpty(racingGameStep)) {
             throw new IllegalArgumentException(ExceptionMessage.INVALID_INPUT_RACING_GAME_STEP);
         }
 
-        if(!racingGameStep.matches(NUMBER_FORMAT_REG_EXP)){
+        if (!racingGameStep.matches(NUMBER_FORMAT_REG_EXP)) {
             throw new IllegalArgumentException(ExceptionMessage.ONLY_NUMBER_INPUT_RACING_GAME_STPE);
         }
     }
