@@ -11,12 +11,17 @@ public class PlayerInput {
 
     private static final String INPUT_CAR_NAMES_SEPARATOR = ",";
 
-    public List<Name> inputNames(){
+    public List<Name> inputNames() {
         System.out.println(RacingGameMessage.GUIDE_MESSAGE_INPUT_CAR_NAMES);
         String inputNames = Console.readLine();
 
-        validateInputNames(inputNames);
-        return convertBy(inputNames);
+        try {
+            validateInputNames(inputNames);
+            return convertBy(inputNames);
+        } catch (Exception e) {
+            System.out.println(ExceptionMessage.INVALID_INPUT_CAR_NAMES);
+            return inputNames();
+        }
     }
 
     private List<Name> convertBy(String inputNames) {
@@ -29,7 +34,7 @@ public class PlayerInput {
     }
 
     private void validateInputNames(String inputNames) {
-        if(isEmpty(inputNames)){
+        if (isEmpty(inputNames)) {
             throw new IllegalArgumentException(ExceptionMessage.INVALID_INPUT_CAR_NAMES);
         }
     }
