@@ -23,4 +23,8 @@ public class PlayPrinter {
         }
         return result.toString();
     }
+
+    public void printWinners(String names) {
+        System.out.println(String.format(RacingGameMessage.WINNER_MESSAGE_FORMAT, names));
+    }
 }

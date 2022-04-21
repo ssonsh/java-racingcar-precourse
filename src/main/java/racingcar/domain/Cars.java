@@ -51,4 +51,26 @@ public class Cars {
     public List<Car> getValues() {
         return this.values;
     }
+
+    public Distance findMaxDistance() {
+        Distance maxDistance = Distance.empty();
+        for (Car car : this.values) {
+            maxDistance = Distance.from(Math.max(maxDistance.getValue(), car.getDistance()));
+        }
+        return maxDistance;
+    }
+
+    public List<Car> findByMatchDistance(Distance distance) {
+        List<Car> winners = new ArrayList<>();
+        for (Car car : this.values) {
+            addWinners(distance, car, winners);
+        }
+        return winners;
+    }
+
+    private void addWinners(Distance distance, Car car, List<Car> winners) {
+        if(car.getDistance().equals(distance.getValue())){
+            winners.add(car);
+        }
+    }
 }

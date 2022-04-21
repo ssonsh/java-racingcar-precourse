@@ -7,4 +7,5 @@ public class RacingGameMessage {
     public static final String GUIDE_MESSAGE_INPUT_RACING_GAME_STEP = "시도할 회수";
     public static final String RUN_RESULT_MESSAGE = "실행 결과";
     public static final String STEP_RESULT_MESSAGE_FORMAT = "%s : %s";
+    public static final String WINNER_MESSAGE_FORMAT = "최종 우승자는 %s 입니다.";
 }

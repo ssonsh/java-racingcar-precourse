@@ -13,6 +13,14 @@ public class Distance {
         return new Distance(0);
     }
 
+    public static Distance empty() {
+        return new Distance(0);
+    }
+
+    public static Distance from(int value) {
+        return new Distance(value);
+    }
+
     public Integer getValue() {
         return this.value;
     }
