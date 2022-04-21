@@ -69,7 +69,7 @@ public class Cars {
     }
 
     private void addWinners(Distance distance, Car car, List<Car> winners) {
-        if(car.getDistance().equals(distance.getValue())){
+        if (car.getDistance().equals(distance.getValue())) {
             winners.add(car);
         }
     }

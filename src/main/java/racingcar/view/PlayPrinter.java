@@ -8,7 +8,7 @@ public class PlayPrinter {
 
     private static final String HYPHEN = "-";
 
-    public void playPrint(Cars cars){
+    public void playPrint(Cars cars) {
         System.out.println(RacingGameMessage.RUN_RESULT_MESSAGE);
         for (Car car : cars.getValues()) {
             System.out.println(String.format(RacingGameMessage.STEP_RESULT_MESSAGE_FORMAT, car.getName(),

@@ -15,7 +15,7 @@ public class Winners {
         return new Winners(cars);
     }
 
-    public String getNames(){
+    public String getNames() {
         StringJoiner result = new StringJoiner(NAME_PRINT_SEPARATOR);
         for (Car car : this.values) {
             result.add(car.getName());

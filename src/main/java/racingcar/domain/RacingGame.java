@@ -15,7 +15,7 @@ public class RacingGame {
         return new RacingGame(cars, racingGameStep);
     }
 
-    public void play(){
+    public void play() {
         this.cars.run();
     }
 

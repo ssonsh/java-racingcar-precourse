@@ -25,7 +25,7 @@ public class RacingGameController {
         this.numberGenerator = numberGenerator;
     }
 
-    public void execute(){
+    public void execute() {
         List<Name> names = this.playerInput.inputNames();
         Cars cars = Cars.of(names, Engine.createBy(numberGenerator));
         RacingGameStep racingGameStep = this.playerInput.inputRacingGameStep();
@@ -44,10 +44,10 @@ public class RacingGameController {
 
     private void playGame(RacingGame racingGame) {
         int playStep = 0;
-        while(!racingGame.isEndGame(playStep)){
+        while (!racingGame.isEndGame(playStep)) {
             racingGame.play();
             playPrinter.playPrint(racingGame.getCars());
-            playStep ++;
+            playStep++;
         }
     }
 }
