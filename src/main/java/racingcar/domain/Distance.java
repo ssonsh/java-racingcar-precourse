@@ -9,10 +9,6 @@ public class Distance {
         this.value = value;
     }
 
-    public static Distance init() {
-        return new Distance(0);
-    }
-
     public static Distance empty() {
         return new Distance(0);
     }

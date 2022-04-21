@@ -10,13 +10,13 @@ public class Car {
 
     private Car(Name name) {
         this.name = name;
-        this.distance = Distance.init();
+        this.distance = Distance.empty();
     }
 
     private Car(Name name, Engine engine) {
         this.name = name;
         this.engine = engine;
-        this.distance = Distance.init();
+        this.distance = Distance.empty();
     }
 
     public static Car from(Name name) {
