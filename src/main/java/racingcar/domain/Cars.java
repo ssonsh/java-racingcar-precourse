@@ -47,4 +47,8 @@ public class Cars {
     public Car getIdx(int index) {
         return this.values.get(index);
     }
+
+    public List<Car> getValues() {
+        return this.values;
+    }
 }

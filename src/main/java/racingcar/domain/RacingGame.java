@@ -14,8 +14,14 @@ public class RacingGame {
     }
 
     public void play(){
-        for (int i = 0; i < racingGameStep.getValue(); i++) {
-            this.cars.run();
-        }
+        this.cars.run();
+    }
+
+    public Cars getCars() {
+        return this.cars;
+    }
+
+    public boolean isEndGame(int playStep) {
+        return this.racingGameStep.getValue() == playStep;
     }
 }
